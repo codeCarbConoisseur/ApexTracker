@@ -8,13 +8,31 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
+    
+    
+
+
+    
+        
+    var networkManager: TrackerGGNetworkManager = TrackerGGNetworkManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .green
+        networkManager.getProfileStats(platform: .origin, userId: "harry17061") { (data, error) in
+            
+            if let error = error {
+                print(error)
+            } else {
+                print(data!)
+            }
+    
+        }
     }
+    
+    
 
 
 }
-
