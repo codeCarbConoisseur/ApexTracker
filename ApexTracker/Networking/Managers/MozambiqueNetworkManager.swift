@@ -10,12 +10,12 @@ import Foundation
 
 enum NetworkResponse:String {
     case success
-    case authenticationError = "You need to be authenticated first."
+    case authenticationError = "Check your nickname"
     case badRequest = "Bad request"
-    case outdated = "The url you requested is outdated."
-    case failed = "Network request failed."
-    case noData = "Response returned with no data to decode."
-    case unableToDecode = "We could not decode the response."
+    case outdated = "The url you requested is outdated"
+    case failed = "Network request failed"
+    case noData = "Response returned with no data to decode"
+    case unableToDecode = "We could not decode the response"
 }
 
 enum Result<String>{
@@ -27,7 +27,7 @@ enum Result<String>{
 
 struct MozambiqueHereNetworkManager {
     static let environment : MozambiqueNetworkEnvironment = .mozambiqueHere
-    static let MozambiqueApiKey = "04YcRPrJRt7CaNrP02YO"
+    static let MozambiqueApiKey = "VhYRlB8eOT3n3XnDlBXY"
     let router = NetworkRouter<MozambiqueHereApi>()
     
     func getNews(completion: @escaping (_ movie: MozambiqueNewsAPIResponse?,_ error: String?)->()){

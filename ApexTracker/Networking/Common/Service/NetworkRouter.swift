@@ -45,7 +45,7 @@ class NetworkRouter<EndPoint: EndPointType>: NetworkRouterProtocol {
         var finalURL: URL
         
         if let specialPath = specialPath {
-            let urlFactory = SpecialURLFactory(baseURL: route.baseURL)
+            let urlFactory = SpecialURLFactory(appendingPath: route.path, baseURL: route.baseURL)
             finalURL = urlFactory.buildURLWithSpecialPath(path: specialPath)
         } else {
             finalURL = route.baseURL.appendingPathComponent(route.path)

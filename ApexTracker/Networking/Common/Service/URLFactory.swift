@@ -11,22 +11,25 @@ import Foundation
 class SpecialURLFactory {
     
     let baseURL: URL
+    let appendingPath: String
     
-    init(baseURL: URL) {
+    init(appendingPath: String,baseURL: URL) {
         self.baseURL = baseURL
+        self.appendingPath = appendingPath
     }
     
     func buildURLWithSpecialPath(path: SpecialPath) -> URL {
+        let url = baseURL.appendingPathComponent(appendingPath)
         switch path {
         case .allProfileStats(let platform, let userId):
             let pathComponent: String = "/" + platform + "/" + userId
-            return baseURL.appendingPathComponent(pathComponent)
+            return url.appendingPathComponent(pathComponent)
         case .profileSegment(let platform, let userId, let segment):
             let pathComponent: String = "/" + platform + "/" + userId + "/segments/" + segment
-            return baseURL.appendingPathComponent(pathComponent)
+            return url.appendingPathComponent(pathComponent)
         case .matchHistory(let platform, let userId):
             let pathComponent: String = "/" + platform + "/" + userId + "/sessions"
-            return baseURL.appendingPathComponent(pathComponent)
+            return url.appendingPathComponent(pathComponent)
         }
     }
 }

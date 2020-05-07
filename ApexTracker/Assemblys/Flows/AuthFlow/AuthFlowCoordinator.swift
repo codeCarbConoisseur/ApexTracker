@@ -23,7 +23,7 @@ final class AuthFlowCoordinator: BaseCoordinator, AuthFlowCoordinatorOutput {
     }
     
     override func start() {
-        
+        showAuth()
     }
     
     private func showAuth() {

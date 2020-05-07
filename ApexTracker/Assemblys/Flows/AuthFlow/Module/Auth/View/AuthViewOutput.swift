@@ -13,5 +13,6 @@ protocol AuthViewOutput {
         Notify presenter that view is ready
     */
 
+    func loginWithSessionInfo(withSessionInfo sessionInfo: SessionInfo)
     func viewIsReady()
 }

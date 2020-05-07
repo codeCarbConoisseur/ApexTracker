@@ -65,6 +65,7 @@
 		60512CC52459B97500A2602A /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60512CC42459B97500A2602A /* CoordinatorFactory.swift */; };
 		60512CC72459BC5C00A2602A /* CoordinatorFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60512CC62459BC5C00A2602A /* CoordinatorFactoryProtocol.swift */; };
 		60512CC92459C3B300A2602A /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60512CC82459C3B300A2602A /* Coordinatable.swift */; };
+		606AA6B924642C97008E80E4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AA6B824642C97008E80E4 /* CustomTextField.swift */; };
 		608799E1956DACDFD5A290D4 /* AuthRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363F72D6914824209CDA5E3 /* AuthRouterInput.swift */; };
 		6088C46824602BBA006A840D /* TabBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6088C46724602BBA006A840D /* TabBarStoryboard.storyboard */; };
 		608E91EC24479693009F28B1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608E91EB24479693009F28B1 /* Theme.swift */; };
@@ -203,6 +204,7 @@
 		60512CC42459B97500A2602A /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		60512CC62459BC5C00A2602A /* CoordinatorFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryProtocol.swift; sourceTree = "<group>"; };
 		60512CC82459C3B300A2602A /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
+		606AA6B824642C97008E80E4 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		6088C46724602BBA006A840D /* TabBarStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarStoryboard.storyboard; sourceTree = "<group>"; };
 		608E91EB24479693009F28B1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		608E91EF2447AABD009F28B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -424,8 +426,8 @@
 		602838A92453511F0034971C /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				609F9BED2460502800FCBD3E /* AuthFlow */,
 				60512CB62459699500A2602A /* MainTabBarFlow */,
+				609F9BED2460502800FCBD3E /* AuthFlow */,
 				41F515983EF2E060896C402F /* NewsFlow */,
 				A0A14B6ADC734FC6A2E54B1F /* ProfileFlow */,
 			);
@@ -888,6 +890,7 @@
 			isa = PBXGroup;
 			children = (
 				60DA25152462CBC800E49EB0 /* SpinnerViewController.swift */,
+				606AA6B824642C97008E80E4 /* CustomTextField.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1139,6 +1142,7 @@
 				60512CBF2459B18A00A2602A /* Routable.swift in Sources */,
 				60D3A424244EF13A00C83F23 /* TrackerGGEndPoint.swift in Sources */,
 				608E92222447B4AA009F28B1 /* NSObject+Ext.swift in Sources */,
+				606AA6B924642C97008E80E4 /* CustomTextField.swift in Sources */,
 				60A96432245C636B008CFBF5 /* NewsFlowFactory.swift in Sources */,
 				608E921C2447B466009F28B1 /* UITextField+Ext.swift in Sources */,
 				608E92142447B3AE009F28B1 /* UIScrollView+Ext.swift in Sources */,

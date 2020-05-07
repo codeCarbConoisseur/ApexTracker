@@ -6,6 +6,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Medium.otf">
+            <string>Inter-Medium</string>
+        </array>
+        <array key="Inter-Regular.otf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Auth View Controller-->
         <scene sceneID="iN6-aC-n1P">
@@ -14,13 +22,84 @@
                     <view key="view" contentMode="scaleToFill" id="NRK-Yj-Crf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="zbp-XD-kEa">
+                                <rect key="frame" x="32" y="403" width="350" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydc-Gk-Pgu">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="17"/>
+                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type your nickname here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNb-LX-la7" customClass="CustomCollectionTextField" customModule="ApexTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="29" width="350" height="41"/>
+                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fNb-LX-la7" secondAttribute="trailing" id="BCw-Ev-egM"/>
+                                    <constraint firstItem="fNb-LX-la7" firstAttribute="leading" secondItem="zbp-XD-kEa" secondAttribute="leading" id="BjO-vK-WBu"/>
+                                    <constraint firstItem="Ydc-Gk-Pgu" firstAttribute="leading" secondItem="zbp-XD-kEa" secondAttribute="leading" id="Za1-M7-9y6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ydc-Gk-Pgu" secondAttribute="trailing" id="nIF-bx-Sfh"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="EOG-nF-u1s">
+                                <rect key="frame" x="82" y="331" width="250" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your platfrom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9q3-5I-wly">
+                                        <rect key="frame" x="53.5" y="0.0" width="143.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zm8-KY-F12">
+                                        <rect key="frame" x="40" y="29" width="170" height="32"/>
+                                        <segments>
+                                            <segment title="Origin"/>
+                                            <segment title="PSN"/>
+                                            <segment title="Xbox"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="q0C-hZ-EWE"/>
+                                    <constraint firstAttribute="width" constant="250" id="yPa-Q6-mfg"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mu-Jt-2m3">
+                                <rect key="frame" x="177.5" y="505" width="59" height="37"/>
+                                <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="20"/>
+                                <state key="normal" title="Log In"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4mu-Jt-2m3" firstAttribute="top" secondItem="zbp-XD-kEa" secondAttribute="bottom" constant="32" id="38G-0K-Zoy"/>
+                            <constraint firstItem="J5a-VM-E98" firstAttribute="trailing" secondItem="zbp-XD-kEa" secondAttribute="trailing" constant="32" id="Fyx-Pc-VHJ"/>
+                            <constraint firstItem="zbp-XD-kEa" firstAttribute="leading" secondItem="J5a-VM-E98" secondAttribute="leading" constant="32" id="GLe-m1-iHq"/>
+                            <constraint firstItem="zbp-XD-kEa" firstAttribute="centerX" secondItem="J5a-VM-E98" secondAttribute="centerX" id="Gt4-N6-VtO"/>
+                            <constraint firstItem="zbp-XD-kEa" firstAttribute="top" secondItem="EOG-nF-u1s" secondAttribute="bottom" constant="12" id="Mi4-NF-Jb6"/>
+                            <constraint firstItem="zbp-XD-kEa" firstAttribute="centerY" secondItem="J5a-VM-E98" secondAttribute="centerY" constant="-15" id="QNk-Kt-Itz"/>
+                            <constraint firstItem="EOG-nF-u1s" firstAttribute="centerX" secondItem="J5a-VM-E98" secondAttribute="centerX" id="jJX-8u-AbE"/>
+                            <constraint firstItem="4mu-Jt-2m3" firstAttribute="centerX" secondItem="J5a-VM-E98" secondAttribute="centerX" id="t2M-8p-2Fo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="J5a-VM-E98"/>
                     </view>
+                    <connections>
+                        <outlet property="logInButton" destination="4mu-Jt-2m3" id="VoA-KA-s8i"/>
+                        <outlet property="nicknameTextField" destination="fNb-LX-la7" id="VE6-Cf-NCi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UL4-eb-wsJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="HMS-yK-Dfz" customClass="AuthModuleInitializer" customModule="ApexTracker" customModuleProvider="target">
+                    <connections>
+                        <outlet property="authViewController" destination="k6m-In-IBX" id="WrP-30-BgI"/>
+                    </connections>
+                </customObject>
             </objects>
-            <point key="canvasLocation" x="220" y="-33"/>
+            <point key="canvasLocation" x="218.84057971014494" y="-33.482142857142854"/>
         </scene>
     </scenes>
 </document>

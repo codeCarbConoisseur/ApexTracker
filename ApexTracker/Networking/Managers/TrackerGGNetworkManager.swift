@@ -58,7 +58,7 @@ struct TrackerGGNetworkManager {
     
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>{
         switch response.statusCode {
-        case 200...500: return .success
+        case 200...401: return .success
         case 401...500: return .failure(NetworkResponse.authenticationError.rawValue)
         case 501...599: return .failure(NetworkResponse.badRequest.rawValue)
         case 600: return .failure(NetworkResponse.outdated.rawValue)
