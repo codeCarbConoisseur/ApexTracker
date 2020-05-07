@@ -8,15 +8,7 @@ public final class UserSession {
     
     // MARK: - Properties.
     
-    public var state: State {
-        get {
-            return _state
-        }
-        set {
-            _state = newValue
-        }
-    }
-    
+    public var state: State { _state }
     public var sessionInvalidated: ((_ userId: Int?) -> Void)?
     public var userSessionInfo: SessionInfo? { storage.obtain() }
     

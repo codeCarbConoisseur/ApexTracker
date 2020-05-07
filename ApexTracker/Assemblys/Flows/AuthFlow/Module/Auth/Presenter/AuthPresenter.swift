@@ -13,6 +13,6 @@ class AuthPresenter: AuthModuleInput, AuthViewOutput, AuthInteractorOutput {
     var router: AuthRouterInput!
 
     func viewIsReady() {
-
+        view.setupInitialState()
     }
 }

@@ -136,38 +136,6 @@ extension NavigationBarConfigurationProtocol where Self: UIViewController {
     }
     
     
-    func createAddPhotoButton() {
-        let addPhotoButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        let addPhotoImage = UIImage(named: "addPhoto")!
-        addPhotoButton.setImage(addPhotoImage, for: UIControl.State.normal)
-        addPhotoButton.addTarget(self, action: #selector(NavigationBarConfigurationProtocol.addPhotoButtonPressed), for: UIControl.Event.touchUpInside)
-        addPhotoButton.frame = CGRect(x: 0, y: 10, width: 40, height: 40)
-        let addPhotoBarButton = UIBarButtonItem(customView: addPhotoButton)
-        
-        if let _ = self.navigationItem.rightBarButtonItems {
-            self.navigationItem.rightBarButtonItems!.append(addPhotoBarButton)
-        } else {
-            self.navigationItem.rightBarButtonItems = [addPhotoBarButton]
-        }
-    }
-    
-    
-    func createDeletePhotoButton() {
-        let deletePhotoButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        let deletePhotoImage = UIImage(named: "deletePhoto")!
-        deletePhotoButton.setImage(deletePhotoImage, for: UIControl.State.normal)
-        deletePhotoButton.addTarget(self, action: #selector(NavigationBarConfigurationProtocol.deletePhotoButtonPressed), for: UIControl.Event.touchUpInside)
-        deletePhotoButton.frame = CGRect(x: 0, y: 20, width: 30, height: 30)
-        let deletePhotoBarButton = UIBarButtonItem(customView: deletePhotoButton)
-        
-        if let _ = self.navigationItem.rightBarButtonItems {
-            self.navigationItem.rightBarButtonItems!.append(deletePhotoBarButton)
-        } else {
-            self.navigationItem.rightBarButtonItems = [deletePhotoBarButton]
-        }
-    }
-    
-    
     func createThrowOffButton() {
         let throwOffButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
         throwOffButton.setTitle("Сбросить", for: .normal)
@@ -200,8 +168,8 @@ extension NavigationBarConfigurationProtocol where Self: UIViewController {
     }
     
 
-    func createLargeLabelInCenter(withTitle title: String) {
-        let label = UILabel(text: title, font: .systemFont(ofSize: 12), textColor: .label, textAlignment: .center, numberOfLines: 1)
+    func createLargeLabelInCenter(withTitle title: String, withFont font: UIFont) {
+        let label = UILabel(text: title, font: font, textColor: .label, textAlignment: .center, numberOfLines: 1)
         if #available(iOS 13.0, *) {
             label.textColor = .label
         } else {

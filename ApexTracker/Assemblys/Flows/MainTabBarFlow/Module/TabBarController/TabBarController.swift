@@ -29,7 +29,7 @@ final class TabbarController: UITabBarController, UITabBarControllerDelegate, Ta
         if selectedIndex == 0 {
             onNewsFlowSelect?(controller)
         }
-        else if selectedIndex == 1 {
+         if selectedIndex == 1 {
             onProfileFlowSelect?(controller)
         }
     }

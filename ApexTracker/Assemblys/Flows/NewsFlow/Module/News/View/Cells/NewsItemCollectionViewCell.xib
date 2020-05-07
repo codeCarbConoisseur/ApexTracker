@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Regular.otf">
+            <string>Inter-Regular</string>
+        </array>
+        <array key="Inter-SemiBold.otf">
+            <string>Inter-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NewsItemCollectionViewCell" customModule="ApexTracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="308" height="421"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="308" height="421"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGP-1q-JW8">
+                        <rect key="frame" x="0.0" y="0.0" width="308" height="421"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultCellImage" translatesAutoresizingMaskIntoConstraints="NO" id="1C8-K0-aNZ">
+                                <rect key="frame" x="0.0" y="0.0" width="308" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="XKa-wI-TGt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rH-bC-erl">
+                                <rect key="frame" x="8" y="198" width="292" height="24.5"/>
+                                <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGb-OQ-1dR">
+                                <rect key="frame" x="8" y="230.5" width="292" height="145.5"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-7T-MV2">
+                                <rect key="frame" x="8" y="384" width="30" height="29"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                <state key="normal" title="Link"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="vGb-OQ-1dR" firstAttribute="leading" secondItem="xGP-1q-JW8" secondAttribute="leading" constant="8" id="3gz-t8-4Sa"/>
+                            <constraint firstAttribute="trailing" secondItem="vGb-OQ-1dR" secondAttribute="trailing" constant="8" id="4Xe-NF-wy6"/>
+                            <constraint firstItem="1C8-K0-aNZ" firstAttribute="leading" secondItem="xGP-1q-JW8" secondAttribute="leading" id="Ecw-yf-5jC"/>
+                            <constraint firstItem="7aZ-7T-MV2" firstAttribute="leading" secondItem="xGP-1q-JW8" secondAttribute="leading" constant="8" id="GA6-Od-R4Z"/>
+                            <constraint firstAttribute="trailing" secondItem="6rH-bC-erl" secondAttribute="trailing" constant="8" id="PZa-iH-t6S"/>
+                            <constraint firstAttribute="width" constant="414" id="bs6-Ts-Qzt"/>
+                            <constraint firstItem="6rH-bC-erl" firstAttribute="leading" secondItem="xGP-1q-JW8" secondAttribute="leading" constant="8" id="fto-gJ-tbE"/>
+                            <constraint firstItem="7aZ-7T-MV2" firstAttribute="top" secondItem="vGb-OQ-1dR" secondAttribute="bottom" constant="8" id="gxN-uA-rUC"/>
+                            <constraint firstItem="1C8-K0-aNZ" firstAttribute="top" secondItem="xGP-1q-JW8" secondAttribute="top" id="j6U-8S-r1A"/>
+                            <constraint firstItem="vGb-OQ-1dR" firstAttribute="top" secondItem="6rH-bC-erl" secondAttribute="bottom" constant="8" id="oAD-14-z5b"/>
+                            <constraint firstAttribute="bottom" secondItem="7aZ-7T-MV2" secondAttribute="bottom" constant="8" id="oU0-df-MIQ"/>
+                            <constraint firstAttribute="trailing" secondItem="1C8-K0-aNZ" secondAttribute="trailing" id="qBy-bc-bHQ"/>
+                            <constraint firstItem="6rH-bC-erl" firstAttribute="top" secondItem="1C8-K0-aNZ" secondAttribute="bottom" constant="8" id="rZB-YF-HUr"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="xGP-1q-JW8" secondAttribute="trailing" id="DEb-hy-rBl"/>
+                <constraint firstItem="xGP-1q-JW8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JwO-Xj-DNB"/>
+                <constraint firstAttribute="bottom" secondItem="xGP-1q-JW8" secondAttribute="bottom" id="b8O-tj-92e"/>
+                <constraint firstItem="xGP-1q-JW8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sl1-7v-C3G"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="308" height="421"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="0.0"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                    <real key="value" value="0.0"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                    <point key="value" x="0.0" y="0.0"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                    <real key="value" value="0.0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="contentViewWIdthConstraint" destination="bs6-Ts-Qzt" id="7fk-Fi-bcY"/>
+                <outlet property="imageView" destination="1C8-K0-aNZ" id="qUo-8z-XNn"/>
+                <outlet property="infoTextView" destination="vGb-OQ-1dR" id="a8e-4X-lmR"/>
+                <outlet property="linkButton" destination="7aZ-7T-MV2" id="Us4-EA-ijf"/>
+                <outlet property="titleLabel" destination="6rH-bC-erl" id="g4R-fj-Ree"/>
+                <outlet property="view" destination="xGP-1q-JW8" id="v2S-rR-3PG"/>
+            </connections>
+            <point key="canvasLocation" x="108.69565217391305" y="146.98660714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="defaultCellImage" width="750" height="421"/>
+    </resources>
+</document>

@@ -25,5 +25,11 @@ class AuthViewController: UIViewController, AuthViewInput, AuthViewCoordinatorOu
 
     // MARK: AuthViewInput
     func setupInitialState() {
+        
     }
+}
+
+
+extension AuthViewController: NavigationBarConfigurationProtocol {
+    
 }

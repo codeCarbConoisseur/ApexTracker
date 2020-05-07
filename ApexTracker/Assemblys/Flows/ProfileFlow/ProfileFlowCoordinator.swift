@@ -21,11 +21,11 @@ final class ProfileFlowCoordinator: BaseCoordinator, ProfileFlowCoordinatorOutpu
         self.router = router
     }
     
-    override func start() {
-        
+    override func start(withUserSession userSession: UserSession) {
+        showProfile(withUserSession: userSession)
     }
     
-    private func showProfile() {
+    private func showProfile(withUserSession userSession: UserSession) {
         var profileOutput = factory.makeProfileOutput()
         profileOutput.onLegendSelect = { [weak self] legend in
             self?.showLegendDetail(withName: legend)

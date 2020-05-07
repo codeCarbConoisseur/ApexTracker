@@ -29,8 +29,6 @@ class TabbarCoordinator: BaseCoordinator {
     }
     
     override func start(with option: DeepLinkOption?) {
-        tabBarOutput.onViewDidLoad = runNewsFlow()
-        tabBarOutput.onNewsFlowSelect = runNewsFlow()
         if let option = option {
             switch option {
             case .news:
@@ -61,7 +59,6 @@ class TabbarCoordinator: BaseCoordinator {
     }
     
     private func startWithOption(withUserSessionInfo userSessionInfo: SessionInfo?) {
-        
         tabBarOutput.onViewDidLoad = runNewsFlow()
         tabBarOutput.onNewsFlowSelect = runNewsFlow()
         if let sessionInfo = userSessionInfo {
@@ -70,28 +67,31 @@ class TabbarCoordinator: BaseCoordinator {
             tabBarOutput.onProfileFlowSelect = runAuthFlow()
         }
     }
+    
+    
     private func runNewsFlow() -> ((UINavigationController) -> ()) {
         return { [unowned self] navController in
             if navController.viewControllers.isEmpty == true {
                 let newsCoordinator = self.coordinatorFactory.makeNewsCoordinator(navController: navController)
-                newsCoordinator.start()
                 self.addDependency(newsCoordinator)
+                newsCoordinator.start()
             }
         }
     }
     
     private func runProfileFlow(withUserSession userSession: SessionInfo) -> ((UINavigationController) -> ()) {
         return { [unowned self] navController in
-            if navController.viewControllers.isEmpty == true {
+            //if navController.viewControllers.isEmpty == true {
                 var profileCoordinator = self.coordinatorFactory.makeProfileCoordinator(navController: navController)
                 profileCoordinator.onSignOut = { [weak self] userSession in
-                    userSession.state = .closed
+                    userSession.stopSession()
                     self?.start(with: nil)
                     self?.removeDependency(profileCoordinator)
                 }
+            self.addDependency(profileCoordinator)
                 profileCoordinator.start()
-                self.addDependency(profileCoordinator)
-            }
+                
+            //}
         }
     }
     
@@ -99,12 +99,17 @@ class TabbarCoordinator: BaseCoordinator {
         return { [unowned self] navController in
             var authCoordinator = self.coordinatorFactory.makeAuthFlowCoordinator(navController: navController)
             authCoordinator.onAuth = { [weak self] userSession in
-                userSession.state = .opened
-                self?.start(with: nil)
-                self?.removeDependency(authCoordinator)
+                if let sessionInfo = userSession.userSessionInfo {
+                    userSession.startSession(with: sessionInfo)
+                                   self?.start(with: nil)
+                                   self?.removeDependency(authCoordinator)
+                } else {
+                    self?.start(with: nil)
+                }
             }
-            authCoordinator.start()
             self.addDependency(authCoordinator)
+            authCoordinator.start()
+            
         }
     }
 }

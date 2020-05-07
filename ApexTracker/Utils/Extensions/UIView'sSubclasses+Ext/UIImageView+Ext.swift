@@ -6,19 +6,30 @@
 //  Copyright © 2020 Захар  Сегал. All rights reserved.
 //
 
-import UIKit
+import UIKit.UIImageView
 
-extension UIImage {
-    func resizeImage(newWidth: CGFloat) -> UIImage {
-        
-        let scale = newWidth / self.size.width
-        let newHeight = self.size.height * scale
-        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-        self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage!
+extension UIImageView {
+    func loadImage(by imageURL: String) {
+        let url = URL(string: imageURL)!
+
+        let cache = URLCache.shared
+        let request = URLRequest(url: url)
+
+        if let imageData = cache.cachedResponse(for: request)?.data {
+            self.image = UIImage(data: imageData)
+        } else {
+            URLSession.shared.dataTask(with: request) { (data, response, _) in
+                DispatchQueue.main.async {
+                    guard let data = data, let response = response else {
+                        return
+                    }
+                    let cacheRepsonse = CachedURLResponse(response: response, data: data)
+                    cache.storeCachedResponse(cacheRepsonse, for: request)
+                    self.image = UIImage(data: data)
+                }
+                
+            }.resume()
+        }
     }
 }
 

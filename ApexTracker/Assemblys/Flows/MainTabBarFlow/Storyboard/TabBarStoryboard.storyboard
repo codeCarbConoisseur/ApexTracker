@@ -10,7 +10,7 @@
         <!--Profile-->
         <scene sceneID="2h9-SP-n3k">
             <objects>
-                <viewController id="uCn-0q-UQu" sceneMemberID="viewController">
+                <viewController id="uCn-0q-UQu" customClass="UINavigationController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NIy-PG-Bc3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
         <!--News-->
         <scene sceneID="JSE-ED-M5P">
             <objects>
-                <viewController id="nog-1I-Cmp" sceneMemberID="viewController">
+                <viewController id="nog-1I-Cmp" customClass="UINavigationController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6cL-3w-12x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

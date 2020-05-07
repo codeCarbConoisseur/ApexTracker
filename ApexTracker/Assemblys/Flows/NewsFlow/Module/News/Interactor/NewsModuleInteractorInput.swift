@@ -9,5 +9,6 @@
 import Foundation
 
 protocol NewsModuleInteractorInput {
-
+    func getNewsData(onSuccess: @escaping (MozambiqueNewsAPIResponse) -> (),
+                     onFailure: @escaping (String) -> ()?)
 }

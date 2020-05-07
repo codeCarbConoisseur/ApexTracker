@@ -14,4 +14,6 @@ protocol NewsModuleViewInput: class {
     */
 
     func setupInitialState()
+    func activityViewStopAnimating()
+    func showAlert(title: String, message: String, buttonTitle: String, handler: (() -> ()?)?)
 }

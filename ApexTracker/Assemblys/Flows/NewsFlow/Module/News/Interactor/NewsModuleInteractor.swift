@@ -7,7 +7,18 @@
 //
 
 class NewsModuleInteractor: NewsModuleInteractorInput {
-
+    
     weak var output: NewsModuleInteractorOutput!
+    private var networkService: MozambiqueHereNetworkManager! = MozambiqueHereNetworkManager()
+    
+    func getNewsData(onSuccess: @escaping (MozambiqueNewsAPIResponse) -> (), onFailure: @escaping (String) -> ()?) {
+        networkService.getNews { (response, error) in
+            if let response = response {
+                onSuccess(response)
+            } else {
+                onFailure(error!)
+            }
+        }
+    }
 
 }

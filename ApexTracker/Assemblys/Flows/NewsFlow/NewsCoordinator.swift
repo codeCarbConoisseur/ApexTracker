@@ -20,7 +20,7 @@ final class NewsCoordinator: BaseCoordinator, NewsCoordinatorOutput {
     }
     
     override func start() {
-        
+        showNews()
     }
     
     private func showNews() {

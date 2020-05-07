@@ -13,6 +13,6 @@ protocol NewsModuleViewOutput {
         Notify presenter that view is ready
     */
 
-    
+    func getData(completion: @escaping (_ response: MozambiqueNewsAPIResponse?)->())
     func viewIsReady()
 }
